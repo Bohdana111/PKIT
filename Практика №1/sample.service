@@ -1,0 +1,14 @@
+[Unit]
+Description=web server service 
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=java -jar /opt/sample/service.jar
+User=bohdana
+Restart=always
+RestartSec=10
+Environment=PORT=8888
+
+[Install]
+WantedBy=multi-user.target
